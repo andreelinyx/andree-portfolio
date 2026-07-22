@@ -1,0 +1,22 @@
+CREATE TABLE IF NOT EXISTS portfolio_profiles (
+  id INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+  name TEXT NOT NULL,
+  role TEXT NOT NULL,
+  location TEXT NOT NULL,
+  email TEXT NOT NULL,
+  availability TEXT NOT NULL,
+  looking_for TEXT NOT NULL DEFAULT '',
+  summary TEXT NOT NULL,
+  about TEXT NOT NULL DEFAULT '',
+  resume_href TEXT NOT NULL DEFAULT '',
+  links JSONB NOT NULL DEFAULT '[]'::jsonb,
+  education JSONB NOT NULL DEFAULT '[]'::jsonb,
+  research JSONB NOT NULL DEFAULT '[]'::jsonb,
+  stats JSONB NOT NULL DEFAULT '[]'::jsonb,
+  skills JSONB NOT NULL DEFAULT '[]'::jsonb,
+  projects JSONB NOT NULL DEFAULT '[]'::jsonb,
+  experience JSONB NOT NULL DEFAULT '[]'::jsonb,
+  services JSONB NOT NULL DEFAULT '[]'::jsonb,
+  created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+  updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
